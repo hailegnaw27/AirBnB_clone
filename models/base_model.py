@@ -4,13 +4,17 @@ BaseModel module
 """
 import uuid
 from datetime import datetime
-from models import engine
+import models
 
 
 class BaseModel:
     """
     BaseModel class
     """
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""
 
     def __init__(self, *args, **kwargs):
         """
@@ -42,7 +46,7 @@ class BaseModel:
         Update the public instance attribute 'updated_at' with the current datetime
         """
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         """
