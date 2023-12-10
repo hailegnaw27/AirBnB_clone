@@ -4,6 +4,7 @@ Unit tests for BaseModel
 """
 import unittest
 from models.base_model import BaseModel
+from models.__init__ import storage
 
 class TestBaseModelInstatioation(unittest.TestCase):
 	"""

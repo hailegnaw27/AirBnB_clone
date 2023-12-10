@@ -3,28 +3,14 @@
 File Storage module
 """
 import json
-from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.place import Place
-from models.review import Review
-from os.path import exists
+
+
 
 class FileStorage:
     """
     FileStorage class
     """
-    classes = {
-        'BaseModel': BaseModel,
-        'User': User,
-        'State': State,
-        'City': City,
-        'Amenity': Amenity,
-        'Place': Place,
-        'Review': Review
-    }
+
     __file_path = 'file.json'
     __objects = {}
 
@@ -56,6 +42,19 @@ class FileStorage:
         """
         Deserializes the JSON file to __objects
         """
+        from models.base_model import BaseModel
+        from models.user import User
+        from models.place import Place
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.review import Review
+
+        classes = {
+            'BaseModel': BaseModel, 'User': User, 'Place': Place,
+            'State': State, 'City': City, 'Amenity': Amenity,
+            'Review': Review
+        }
         try:
             with open(self.__file_path, mode='r', encoding='utf-8') as file:
                 load_dict = json.load(file)
@@ -67,3 +66,9 @@ class FileStorage:
                     self.__objects[key] = obj
         except FileNotFoundError:
             pass
+
+    def delete(self, obj=None):
+        """Deletes obj from __objects if it's inside"""
+        if obj is not None:
+            key = obj.to_dict()['__class__'] + '.' + obj.id
+            self.all().pop(key, None)
