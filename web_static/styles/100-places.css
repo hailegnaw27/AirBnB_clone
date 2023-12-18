@@ -1,0 +1,133 @@
+.places {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.places article {
+  width: 390px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid #FF5A5F;
+  border-radius: 4px;
+}
+
+.places h1 {
+  font-size: 30px;
+  text-align: left;
+}
+
+.places h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.price_by_night {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  min-width: 60px;
+  height: 60px;
+  border: #FF5A5F 4px solid;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price_by_night span {
+  font-size: 30px;
+  color: #FF5A5F;
+}
+
+.information {
+  height: 80px;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.information div {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+.information div i {
+  margin-right: 5px;
+}
+
+.user {
+  display: flex;
+  margin-top: 10px;
+}
+
+.user span {
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+.description h3 {
+  font-size: 16px;
+}
+
+.description p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.amenities {
+  margin-top: 40px;
+}
+
+.amenities h2 {
+  font-size: 16px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.amenities ul {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.amenities li {
+  margin-bottom: 5px;
+}
+
+.amenities li i {
+  margin-right: 5px;
+}
+
+.reviews {
+  margin-top: 40px;
+}
+
+.reviews h2 {
+  font-size: 16px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.reviews ul {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.reviews li {
+  margin-bottom: 10px;
+}
+
+.reviews li h3 {
+  font-size: 14px;
+}
+
+.reviews li p {
+  font-size: 12px;
+}
